@@ -1,0 +1,133 @@
+{
+  "timestamp": "20260401_115438",
+  "reconstruction_data": {
+    "steps": [
+      {
+        "step": 0,
+        "sequence": "ATGNGATCGATNGATCGATCG",
+        "confidence": [
+          0.9,
+          0.9,
+          0.9,
+          0.1,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.1,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9
+        ],
+        "mutations": [],
+        "progress": 0.0
+      },
+      {
+        "step": 1,
+        "sequence": "ATGNGATCGATTGATCGATCG",
+        "confidence": [
+          0.9,
+          0.9,
+          0.9,
+          0.1,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.6214824351769066,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9
+        ],
+        "mutations": [
+          {
+            "step": 1,
+            "position": 11,
+            "from": "N",
+            "to": "T",
+            "type": "reconstruction",
+            "confidence": 0.5975267983229475
+          }
+        ],
+        "progress": 0.5,
+        "bases_remaining": 1
+      },
+      {
+        "step": 2,
+        "sequence": "ATGTGATCGATTGATCGATCG",
+        "confidence": [
+          0.9,
+          0.9,
+          0.9,
+          0.6706547383573942,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.9
+        ],
+        "mutations": [
+          {
+            "step": 1,
+            "position": 11,
+            "from": "N",
+            "to": "T",
+            "type": "reconstruction",
+            "confidence": 0.5975267983229475
+          },
+          {
+            "step": 2,
+            "position": 3,
+            "from": "N",
+            "to": "T",
+            "type": "reconstruction",
+            "confidence": 0.510351864878384
+          }
+        ],
+        "progress": 1.0,
+        "bases_remaining": 0
+      }
+    ],
+    "final_sequence": "ATGTGATCGATTGATCGATCG",
+    "total_mutations": 2,
+    "confidence": 0.8890787970646377,
+    "unknown_resolved": 2,
+    "success_rate": 0.09523809523809523
+  },
+  "final_sequence": "ATGTGATCGATTGATCGATCG",
+  "statistics": {
+    "total_mutations": 2,
+    "confidence": 0.8890787970646377,
+    "success_rate": 0.09523809523809523
+  }
+}
