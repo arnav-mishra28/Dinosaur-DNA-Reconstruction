@@ -1,0 +1,74 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>DNA Reconstruction Visualizer</title>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            .container { max-width: 1200px; margin: 0 auto; }
+            .sequence-display { font-family: monospace; font-size: 14px; }
+            .controls { margin: 20px 0; }
+            button { padding: 10px 20px; margin: 5px; background: #007acc; color: white; border: none; cursor: pointer; }
+            button:hover { background: #005a9e; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🧬 DNA Reconstruction Visualizer</h1>
+            
+            <div class="controls">
+                <button onclick="startReconstruction()">Start Reconstruction</button>
+                <button onclick="showPhylogeny()">Show Phylogeny</button>
+                <button onclick="exportResults()">Export Results</button>
+            </div>
+            
+            <div id="sequence-display" class="sequence-display">
+                <p>Input your damaged sequence and click Start Reconstruction</p>
+            </div>
+            
+            <div id="visualization-area">
+                <!-- Visualizations will be inserted here -->
+            </div>
+        </div>
+        
+        <script>
+            function startReconstruction() {
+                // Integration with Python backend
+                const vscode = acquireVsCodeApi();
+                vscode.postMessage({
+                    command: 'startReconstruction',
+                    sequence: 'ATGCN-NATGC-NNCGATNNNAAATTT'
+                });
+            }
+            
+            function showPhylogeny() {
+                const vscode = acquireVsCodeApi();
+                vscode.postMessage({
+                    command: 'showPhylogeny'
+                });
+            }
+            
+            function exportResults() {
+                const vscode = acquireVsCodeApi();
+                vscode.postMessage({
+                    command: 'exportResults'
+                });
+            }
+            
+            // Listen for messages from VS Code extension
+            window.addEventListener('message', event => {
+                const message = event.data;
+                switch (message.command) {
+                    case 'updateSequence':
+                        document.getElementById('sequence-display').innerHTML = message.html;
+                        break;
+                    case 'updateVisualization':
+                        document.getElementById('visualization-area').innerHTML = message.html;
+                        break;
+                }
+            });
+        </script>
+    </body>
+    </html>
+    
